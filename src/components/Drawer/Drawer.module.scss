@@ -1,0 +1,138 @@
+.removeBtn {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.greenButton {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  background: #459529;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background: lighten($color: #316f1a, $amount: 5%);
+  }
+
+  &:active {
+    background: darken($color: #316f1a, $amount: 5%);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  overflow: hidden;
+
+  .drawer {
+    position: absolute;
+    width: 420px;
+    height: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: -10px 4px 24px 0px #0000001A;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+
+    h2 {
+      margin: 0;
+    }
+
+    .items {
+      flex: 1;
+      overflow: auto;
+    }
+
+    .cartItem {
+      border: 1px solid #F3F3F3;
+      border-radius: 20px;
+      padding: 30px 20px;
+      overflow: hidden;
+
+      p {
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      b {
+        font-size: 14px;
+      }
+
+      img {
+        margin-right: 0;
+      }
+    }
+
+    .cartTotalBlock {
+      li {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      div {
+        border-bottom: 1px dashed #DFDFDF;
+        flex: 1;
+        position: relative;
+        top: -4px;
+        margin: 0 7px;
+      }
+
+      .greenButton {
+        &:hover {
+          img {
+            transform: translateX(7px);
+          }
+        }
+
+        img {
+          position: absolute;
+          right: 35px;
+          top: 23px;
+          transition: transform 0.2s ease-in-out;
+        }
+      }
+    }
+
+  }
+
+  .removeBtn {
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+
+  }
+
+}
+
+.overlayVisible {
+  visibility: visible;
+  opacity: 1;
+
+  .drawer {
+    transform: translateX(0);
+  }
+}
+
