@@ -137,7 +137,7 @@ function App() {
       onRemoveItemCart
     }}>
       <Routes>
-        <Route path='' element={<Layout />}>
+        <Route path='/' element={<Layout />}>
           <Route path='' element={<About />} />
           <Route path='menu' element={<Menu
             searchInput={searchInput}
